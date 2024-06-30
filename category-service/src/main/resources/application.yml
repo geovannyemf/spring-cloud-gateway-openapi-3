@@ -1,0 +1,35 @@
+server:
+  servlet:
+    context-path: /
+  port:
+    5000
+
+spring:
+  application:
+    name: category-service
+  data:
+    mongodb:
+      user: root
+      password: root
+      uri: mongodb://localhost:27017/swagger
+
+openapi:
+  service:
+    title: category-service doc
+    version: 1.0.0
+    url: http://localhost:8080
+
+springdoc:
+  api-docs:
+    path: /category-service/v3/api-docs
+  swagger-ui:
+    path: /category-service/swagger-ui.html
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
